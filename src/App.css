@@ -40,6 +40,20 @@
   font-weight: bold;
 }
 
+.card-prod button {
+  margin-top: 12px;
+  padding: 8px;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.card-prod button:hover {
+  background-color: white;
+  color: black;
+}
+
 .funcionario {
   background-color: rgb(255, 251, 0);
   width: 90%;

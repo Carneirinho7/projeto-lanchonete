@@ -3,6 +3,7 @@ import Login from "./componentes/Login";
 import CardProd from "./componentes/CardProd";
 import Funcionario from "./componentes/Funcionario";
 import "./App.css";
+import Contador from "./componentes/contador";
 
 
 function App(){
@@ -25,7 +26,11 @@ function App(){
       </section>
 
       <Funcionario nome="Thiago o Chefe da Chapa" />
+
+      <Contador/>
     </div>
+
+  
 
   )
 }

@@ -3,6 +3,7 @@ function CardProd({nome, preco}){
      <div className="card-prod">
        <h3>{nome}</h3>
        <p>{preco}</p>
+       <button>Adicionar</button>
      </div>
    )
 }
