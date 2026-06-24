@@ -1,8 +1,20 @@
 .titulo {
-
-    background-color: black;
+  background-color: rgb(251, 255, 0);
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+  width: 70%;
+  margin: 0 auto;
+  color: white;
+  
 }
 
-.titulo h1{
-    color:white
+.titulo h1 {
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+.titulo h2 {
+  color: rgb(0, 0, 0);
+  margin-top: 8px;
 }
