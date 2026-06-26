@@ -49,9 +49,63 @@
   cursor: pointer;
 }
 
+.acoes-produto {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card-prod button:disabled {
+  background-color: gray;
+  border-color: gray;
+  cursor: not-allowed;
+}
+
 .card-prod button:hover {
   background-color: white;
   color: black;
+}
+
+.card-prod button:disabled:hover {
+  background-color: gray;
+  color: white;
+}
+
+.resumo-pedido {
+  background-color: rgb(255, 251, 0);
+  width: 90%;
+  max-width: 400px;
+  margin: 30px auto 0;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.resumo-pedido h2 {
+  margin-top: 0;
+  color: black;
+}
+
+.resumo-pedido p {
+  color: black;
+}
+
+.item-pedido,
+.total-pedido {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: black;
+}
+
+.item-pedido {
+  margin-bottom: 8px;
+}
+
+.total-pedido {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid black;
+  font-size: 20px;
 }
 
 .funcionario {
