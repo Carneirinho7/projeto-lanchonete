@@ -9,12 +9,12 @@ import Contador from "./componentes/contador";
 
 function App(){
   const [produtos, setProdutos] = useState([
-    { nome: "X-Bozze", preco: 19, quantidade: 0 },
-    { nome: "X-Pimentel", preco: 17, quantidade: 0 },
-    { nome: "X-Fermino", preco: 15, quantidade: 0 },
-    { nome: "Refrigerante", preco: 6, quantidade: 0 },
-    { nome: "Suco", preco: 5, quantidade: 0 },
-    { nome: "Água", preco: 3.5, quantidade: 0 },
+    { nome: "X-Bozze", preco: 19, quantidade: 0, imagem: "/imagens/xbozze.jpg" },
+    { nome: "X-Pimentel", preco: 17, quantidade: 0, imagem: "/imagens/xpimentel.jpg" },
+    { nome: "X-Fermino", preco: 15, quantidade: 0, imagem: "/imagens/xfermino.jpg" },
+    { nome: "Refrigerante", preco: 6, quantidade: 0, imagem: "/imagens/refrigerante.jpg" },
+    { nome: "Suco", preco: 5, quantidade: 0, imagem: "/imagens/suco.jpg" },
+    { nome: "Água", preco: 3.5, quantidade: 0, imagem: "/imagens/agua.jpg" },
   ]);
 
   const itensPedido = produtos.filter((produto) => produto.quantidade > 0);
@@ -64,6 +64,7 @@ function App(){
               nome={produto.nome}
               preco={produto.preco}
               quantidade={produto.quantidade}
+              imagem={produto.imagem}
               adicionarItem={() => adicionarItem(produto.nome)}
               removerItem={() => removerItem(produto.nome)}
             />
@@ -93,7 +94,10 @@ function App(){
         )}
       </section>
 
-      <Funcionario nome="Thiago o Chefe da Chapa" />
+      <Funcionario nome="Thiago o Chefe da Chapa" cargo="o chefe da chapa" />
+      <Funcionario nome="Maria" cargo="atendente" />
+      <Funcionario nome="João" cargo="cozinheiro" />
+      <Funcionario nome="Lúcia" cargo="caixa" />
 
       <Contador/>
     </div>

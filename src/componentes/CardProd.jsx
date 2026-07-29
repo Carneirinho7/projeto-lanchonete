@@ -1,4 +1,4 @@
-function CardProd({nome, preco, quantidade, adicionarItem, removerItem}){
+function CardProd({nome, preco, quantidade, imagem, adicionarItem, removerItem}){
    const total = preco * quantidade;
    const precoFormatado = preco.toLocaleString("pt-BR", {
       style: "currency",
@@ -11,6 +11,7 @@ function CardProd({nome, preco, quantidade, adicionarItem, removerItem}){
 
    return(
      <div className="card-prod">
+       <img src={imagem} alt={nome} className="imagem-produto" />
        <h3>{nome}</h3>
        <p>Preço: {precoFormatado}</p>
        <p>Quantidade: {quantidade}</p>
