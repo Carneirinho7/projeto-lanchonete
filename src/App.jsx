@@ -18,6 +18,9 @@ function App(){
   ]);
 
   const itensPedido = produtos.filter((produto) => produto.quantidade > 0);
+  const quantidadeCarrinho = produtos.reduce((total, produto) => {
+    return total + produto.quantidade;
+  }, 0);
   const totalPedido = produtos.reduce((total, produto) => {
     return total + produto.preco * produto.quantidade;
   }, 0);
@@ -51,8 +54,11 @@ function App(){
 
   return(
     <div className="pagina">
-      <Header titulo = "Lanchonete Dogão"
-      subtitulo = "A melhor de CWB" />
+      <Header
+        titulo="Lanchonete Dogão"
+        subtitulo="A melhor de CWB"
+        quantidade={quantidadeCarrinho}
+      />
       <Login  />
 
       <section className="produtos">

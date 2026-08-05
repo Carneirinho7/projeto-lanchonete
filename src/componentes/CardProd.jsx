@@ -17,7 +17,7 @@ function CardProd({nome, preco, quantidade, imagem, adicionarItem, removerItem})
        <p>Quantidade: {quantidade}</p>
        <p>Total: {totalFormatado}</p>
        <div className="acoes-produto">
-         <button onClick={adicionarItem}>Adicionar</button>
+         <button onClick={adicionarItem}>Adicionar ao Carrinho</button>
          <button onClick={removerItem} disabled={quantidade === 0}>Remover</button>
        </div>
      </div>
