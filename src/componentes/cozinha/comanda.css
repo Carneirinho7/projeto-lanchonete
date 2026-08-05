@@ -1,0 +1,55 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(51, 255, 0);
+  color: black;
+}
+
+.pagina-comanda {
+  width: min(100%, 1050px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.carrinho {
+  background-color: rgb(255, 251, 0);
+  border: 2px solid black;
+  padding: 24px;
+}
+
+.cabecalho { border-bottom: 2px solid black; margin-bottom: 18px; }
+.cabecalho p, .cabecalho-pedido p { margin: 0; font-size: 13px; font-weight: bold; text-transform: uppercase; }
+.cabecalho h1 { margin: 5px 0 17px; font-size: 29px; }
+
+.linha {
+  display: grid;
+  grid-template-columns: 52px 1.25fr 1fr .45fr .9fr;
+  gap: 9px;
+  align-items: center;
+  min-height: 62px;
+  border-bottom: 1px solid black;
+  font-size: 14px;
+}
+
+.cabecalho-tabela { min-height: 32px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+.linha img { width: 42px; height: 42px; border: 1px solid black; object-fit: cover; }
+.resumo { margin-top: 20px; padding: 12px; border: 1px solid black; background: white; }
+.resumo p { display: flex; justify-content: space-between; margin: 6px 0; }.resumo p:last-child { font-size: 19px; }
+.acoes { display: flex; gap: 10px; margin-top: 18px; }.acoes button { flex: 1; padding: 12px 8px; border: 2px solid black; font-size: 14px; font-weight: bold; cursor: pointer; }
+.limpar { background: white; color: black; }.finalizar { background: black; color: white; }.acoes button:hover { background: rgb(51, 255, 0); color: black; }
+
+.pedido-cozinha { overflow: hidden; border: 2px solid black; background: black; color: white; }
+.aviso-cozinha { padding: 13px 20px; background-color: rgb(255, 251, 0); color: black; font-size: 13px; font-weight: bold; text-align: center; text-transform: uppercase; }
+.conteudo-pedido { padding: 25px; }.cabecalho-pedido { display: flex; justify-content: space-between; align-items: center; }.cabecalho-pedido h2 { margin: 2px 0 0; color: rgb(255, 251, 0); font-size: 42px; }
+.mesa { padding: 8px 15px; border: 1px solid rgb(255, 251, 0); text-align: center; }.mesa span { display: block; font-size: 11px; font-weight: bold; text-transform: uppercase; }.mesa strong { font-size: 26px; color: rgb(51, 255, 0); }
+.horario { margin: 18px 0; padding-block: 12px; border-block: 1px solid white; }.itens-pedido { padding-bottom: 10px; border-bottom: 1px solid white; }.itens-pedido p { margin: 14px 0; font-size: 21px; font-weight: bold; }.itens-pedido strong { color: rgb(51, 255, 0); }
+.status-atual { display: flex; justify-content: space-between; align-items: center; margin: 20px 0; }.status-atual span { font-weight: bold; }.status-atual strong { padding: 8px 14px; background: rgb(255, 251, 0); color: black; }
+.status-pedido { display: flex; justify-content: space-between; margin: 0; padding: 0; list-style: none; }.status-pedido li { position: relative; flex: 1; padding-top: 35px; color: #bdbdbd; font-size: 11px; font-weight: bold; text-align: center; }.status-pedido li::before { content: ""; position: absolute; top: 4px; left: calc(50% - 11px); width: 19px; height: 19px; border: 2px solid white; border-radius: 50%; background: black; }.status-pedido li:not(:last-child)::after { content: ""; position: absolute; top: 14px; left: calc(50% + 11px); width: calc(100% - 22px); height: 2px; background: white; }.status-pedido .concluido, .status-pedido .ativo { color: white; }.status-pedido .concluido::before { background: rgb(51, 255, 0); border-color: rgb(51, 255, 0); }.status-pedido .ativo::before { background: rgb(255, 251, 0); border-color: rgb(255, 251, 0); }
+
+@media (max-width: 760px) { .pagina-comanda { grid-template-columns: 1fr; }.carrinho, .conteudo-pedido { padding: 18px; }.linha { grid-template-columns: 42px 1.15fr .85fr .35fr .8fr; gap: 5px; font-size: 12px; }.linha img { width: 34px; height: 34px; }.cabecalho-tabela { font-size: 9px; }.status-pedido li { font-size: 9px; } }

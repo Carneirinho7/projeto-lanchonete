@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comanda - Lanchonete Dogão</title>
+    <link rel="stylesheet" href="comanda.css">
+  </head>
+  <body>
+    <main class="pagina-comanda">
+      <section class="carrinho" aria-labelledby="titulo-carrinho">
+        <header class="cabecalho">
+          <p>Pedido atual</p>
+          <h1 id="titulo-carrinho">Carrinho de Compras</h1>
+        </header>
+
+        <div class="tabela-carrinho">
+          <div class="linha cabecalho-tabela">
+            <span>Foto</span>
+            <span>Produto</span>
+            <span>Categoria</span>
+            <span>Qtde</span>
+            <span>Preço</span>
+          </div>
+
+          <div class="linha">
+            <img src="../../../public/imagens/xbozze.jpg" alt="X-Burguer">
+            <strong>X-Burguer</strong>
+            <span>Lanches</span>
+            <span>2</span>
+            <strong>R$ 36,00</strong>
+          </div>
+
+          <div class="linha">
+            <img src="../../../public/imagens/refrigerante.jpg" alt="Refrigerante">
+            <strong>Refrigerante</strong>
+            <span>Bebidas</span>
+            <span>1</span>
+            <strong>R$ 8,00</strong>
+          </div>
+
+          <div class="linha">
+            <img src="../../../public/imagens/xfermino.jpg" alt="Batata frita">
+            <strong>Batata Frita</strong>
+            <span>Porções</span>
+            <span>3</span>
+            <strong>R$ 30,00</strong>
+          </div>
+        </div>
+
+        <div class="resumo">
+          <p>Total de itens: <strong>6</strong></p>
+          <p>Valor Total: <strong>R$ 74,00</strong></p>
+        </div>
+
+        <div class="acoes">
+          <button class="limpar" type="button">Limpar Carrinho</button>
+          <button class="finalizar" type="button">Finalizar Pedido</button>
+        </div>
+      </section>
+
+      <section class="pedido-cozinha" aria-labelledby="titulo-pedido">
+        <div class="aviso-cozinha">Pedido em produção • Visão da cozinha</div>
+        <div class="conteudo-pedido">
+          <header class="cabecalho-pedido">
+            <div>
+              <p>Pedido</p>
+              <h2 id="titulo-pedido">#001</h2>
+            </div>
+            <div class="mesa">
+              <span>Mesa</span>
+              <strong>03</strong>
+            </div>
+          </header>
+
+          <p class="horario">Horário: <strong>12:15</strong></p>
+
+          <div class="itens-pedido">
+            <p><strong>2x</strong> X-Burguer</p>
+            <p><strong>1x</strong> Batata</p>
+            <p><strong>2x</strong> Coca-Cola</p>
+          </div>
+
+          <div class="status-atual">
+            <span>Status</span>
+            <strong>Preparando</strong>
+          </div>
+
+          <ol class="status-pedido" aria-label="Andamento do pedido">
+            <li class="concluido">Recebido</li>
+            <li class="ativo">Preparando</li>
+            <li>Pronto</li>
+            <li>Entregue</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
