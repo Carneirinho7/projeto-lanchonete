@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho - Lanchonete Dogão</title>
+  </head>
+  <body>
+    <main class="pagina-comanda">
+      <section class="carrinho" aria-labelledby="titulo-carrinho">
+        <header class="cabecalho">
+          <p>Pedido atual</p>
+          <h1 id="titulo-carrinho">Carrinho de Compras</h1>
+        </header>
+
+        <div class="tabela-carrinho">
+          <div class="linha cabecalho-tabela">
+            <span>Foto</span><span>Produto</span><span>Categoria</span><span>Qtde</span><span>Preço</span>
+          </div>
+          <div class="linha">
+            <img src="../public/imagens/xbozze.jpg" alt="X-Burguer" />
+            <strong>X-Burguer</strong><span>Lanches</span><span>2</span><strong>R$ 36,00</strong>
+          </div>
+          <div class="linha">
+            <img src="../public/imagens/refrigerante.jpg" alt="Refrigerante" />
+            <strong>Refrigerante</strong><span>Bebidas</span><span>1</span><strong>R$ 8,00</strong>
+          </div>
+          <div class="linha">
+            <img src="../public/imagens/xfermino.jpg" alt="Batata frita" />
+            <strong>Batata Frita</strong><span>Porções</span><span>3</span><strong>R$ 30,00</strong>
+          </div>
+        </div>
+
+        <div class="resumo">
+          <p>Total de itens: <strong>6</strong></p>
+          <p>Valor Total: <strong>R$ 74,00</strong></p>
+        </div>
+
+        <div class="acoes">
+          <button class="limpar" type="button">Limpar Carrinho</button>
+          <button class="finalizar" type="button">Finalizar Pedido</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

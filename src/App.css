@@ -134,3 +134,44 @@
 .funcionario p {
   color: black;
 }
+
+.pagina-comanda {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: rgb(51, 255, 0);
+  color: #000;
+  box-sizing: border-box;
+}
+
+.carrinho {
+  width: min(950px, 100%);
+  margin: 0 auto;
+  padding: 28px;
+  background: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
+
+.cabecalho p { margin-bottom: 4px; }
+.cabecalho h1 { margin: 0 0 24px; }
+.tabela-carrinho { overflow-x: auto; }
+.linha {
+  min-width: 620px;
+  display: grid;
+  grid-template-columns: 80px 1.5fr 1fr 70px 110px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+.linha img { width: 64px; height: 48px; object-fit: cover; }
+.cabecalho-tabela { font-weight: bold; border-bottom: 2px solid #000; }
+.carrinho-vazio { padding: 20px 0; }
+.resumo { margin-top: 24px; text-align: right; }
+.acoes { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.acoes button { padding: 10px 14px; border: 1px solid #000; cursor: pointer; font: inherit; }
+.voltar { background: #fff; }
+.limpar { background: #f5d4d4; }
+.finalizar { background: #000; color: #fff; }
+.acoes button:disabled { opacity: .55; cursor: not-allowed; }

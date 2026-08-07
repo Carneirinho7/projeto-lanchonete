@@ -5,9 +5,12 @@ import CardProd from "./componentes/CardProd";
 import Funcionario from "./componentes/Funcionario";
 import "./App.css";
 import Contador from "./componentes/contador";
+import Home from "../pages/home";
+import Carrinho from "../pages/carrinho";
 
 
 function App(){
+  const [pagina, setPagina] = useState("home");
   const [produtos, setProdutos] = useState([
     { nome: "X-Bozze", preco: 19, quantidade: 0, imagem: "/imagens/xbozze.jpg" },
     { nome: "X-Pimentel", preco: 17, quantidade: 0, imagem: "/imagens/xpimentel.jpg" },
@@ -52,12 +55,38 @@ function App(){
     }));
   }
 
+  function limparCarrinho() {
+    setProdutos(produtos.map((produto) => ({ ...produto, quantidade: 0 })));
+  }
+
+  function finalizarPedido() {
+    window.alert(`Pedido finalizado! Total: ${formatarPreco(totalPedido)}`);
+    limparCarrinho();
+    setPagina("home");
+  }
+
+  if (pagina === "carrinho") {
+    return (
+      <Carrinho
+        itens={itensPedido}
+        totalItens={quantidadeCarrinho}
+        totalPedido={totalPedido}
+        formatarPreco={formatarPreco}
+        aoVoltar={() => setPagina("home")}
+        aoLimpar={limparCarrinho}
+        aoFinalizar={finalizarPedido}
+      />
+    );
+  }
+
   return(
+    <Home>
     <div className="pagina">
       <Header
         titulo="Lanchonete Dogão"
         subtitulo="A melhor de CWB"
         quantidade={quantidadeCarrinho}
+        aoAbrirCarrinho={() => setPagina("carrinho")}
       />
       <Login  />
 
@@ -107,6 +136,7 @@ function App(){
 
       <Contador/>
     </div>
+    </Home>
 
   
 
