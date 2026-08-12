@@ -1,7 +1,13 @@
 :root {
+  --cor-escura: #19324d;
+  --cor-principal: #36c2b4;
+  --cor-destaque: #f26b5b;
+  --cor-apoio: #f8c146;
+  --cor-clara: #fff8f0;
+  --cor-branca: #ffffff;
   --text: #6b6375;
   --text-h: #08060d;
-  --bg: #fff;
+  --bg: var(--cor-principal);
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
@@ -52,6 +58,7 @@
 
 body {
   margin: 0;
+  background-color: var(--cor-principal);
 }
 
 #root {
@@ -64,6 +71,7 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  background-color: var(--cor-principal);
 }
 
 h1,

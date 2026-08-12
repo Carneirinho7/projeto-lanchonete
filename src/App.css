@@ -175,3 +175,165 @@
 .limpar { background: #f5d4d4; }
 .finalizar { background: #000; color: #fff; }
 .acoes button:disabled { opacity: .55; cursor: not-allowed; }
+
+.pagina-login {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: rgb(51, 255, 0);
+  box-sizing: border-box;
+}
+
+.pedido-cozinha {
+  width: min(620px, 100%);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid #000;
+  background: #000;
+  color: #fff;
+  text-align: left;
+}
+
+.aviso-cozinha {
+  padding: 13px 20px;
+  background-color: rgb(255, 251, 0);
+  color: #000;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.conteudo-pedido { padding: 25px; }
+
+.cabecalho-pedido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cabecalho-pedido h1 {
+  margin: 2px 0 0;
+  color: rgb(255, 251, 0);
+  font-size: 42px;
+}
+
+.mesa {
+  padding: 8px 15px;
+  border: 1px solid rgb(255, 251, 0);
+  text-align: center;
+}
+
+.mesa span {
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mesa strong {
+  font-size: 26px;
+  color: rgb(51, 255, 0);
+}
+
+.horario {
+  margin: 18px 0;
+  padding-block: 12px;
+  border-block: 1px solid #fff;
+}
+
+.itens-pedido {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+.itens-pedido p {
+  margin: 14px 0;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.itens-pedido strong { color: rgb(51, 255, 0); }
+
+.status-atual {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.status-atual strong {
+  padding: 8px 14px;
+  background: rgb(255, 251, 0);
+  color: #000;
+}
+
+.status-pedido {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.status-pedido li {
+  flex: 1;
+  color: #bdbdbd;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.status-pedido .concluido { color: rgb(51, 255, 0); }
+.status-pedido .ativo { color: rgb(255, 251, 0); }
+
+/* Nova paleta: azul-marinho, turquesa, coral e creme. */
+.pagina,
+.pagina-comanda,
+.pagina-login { background-color: var(--cor-principal); color: var(--cor-escura); }
+
+.produtos h2,
+.card-prod h3,
+.card-prod p,
+.resumo-pedido h2,
+.resumo-pedido p,
+.item-pedido,
+.total-pedido,
+.funcionario h2,
+.funcionario p { color: var(--cor-escura); }
+
+.card-prod,
+.resumo-pedido,
+.funcionario,
+.carrinho { background-color: var(--cor-clara); border-color: var(--cor-escura); }
+
+.card-prod {
+  background-color: var(--cor-escura);
+  border-color: var(--cor-escura);
+}
+
+.card-prod h3,
+.card-prod p { color: var(--cor-clara); }
+
+.card-prod button {
+  background-color: var(--cor-destaque);
+  color: var(--cor-clara);
+  border-color: var(--cor-destaque);
+}
+
+.card-prod button:hover { background-color: var(--cor-escura); color: var(--cor-clara); }
+.total-pedido { border-top-color: var(--cor-escura); }
+.cabecalho-tabela { border-bottom-color: var(--cor-escura); }
+.acoes button { border-color: var(--cor-escura); color: var(--cor-escura); }
+.voltar { background: var(--cor-clara); }
+.limpar { background: var(--cor-apoio); }
+.finalizar { background: var(--cor-destaque); color: var(--cor-clara) !important; }
+
+.pedido-cozinha { background: var(--cor-escura); border-color: var(--cor-escura); color: var(--cor-clara); }
+.aviso-cozinha { background-color: var(--cor-apoio); color: var(--cor-escura); }
+.cabecalho-pedido h1 { color: var(--cor-apoio); }
+.mesa { border-color: var(--cor-apoio); }
+.mesa strong,
+.itens-pedido strong,
+.status-pedido .concluido { color: var(--cor-principal); }
+.status-atual strong { background: var(--cor-apoio); color: var(--cor-escura); }
+.status-pedido .ativo { color: var(--cor-apoio); }

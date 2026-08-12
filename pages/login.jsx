@@ -1,7 +1,9 @@
+import FormularioLogin from "../src/componentes/Login";
+
 function Login() {
   return (
-    <main>
-      <h1>Login</h1>
+    <main className="pagina-login">
+      <FormularioLogin />
     </main>
   );
 }

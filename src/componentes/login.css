@@ -33,3 +33,22 @@
   background-color: white;
   color: black;
 }
+
+.login {
+  background-color: var(--cor-clara);
+  border-color: var(--cor-escura);
+}
+
+.login h2 { color: var(--cor-escura); }
+.login input { border-color: var(--cor-principal); }
+
+.login button {
+  background-color: var(--cor-destaque);
+  color: var(--cor-clara);
+  border-color: var(--cor-destaque);
+}
+
+.login button:hover {
+  background-color: var(--cor-escura);
+  color: var(--cor-clara);
+}

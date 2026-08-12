@@ -19,7 +19,14 @@
   margin-top: 8px;
 }
 
-.botao-carrinho {
+.abas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.aba {
   padding: 10px 16px;
   border: 1px solid #000;
   border-radius: 6px;
@@ -29,7 +36,28 @@
   cursor: pointer;
 }
 
-.botao-carrinho:hover {
+.aba:hover,
+.aba.ativa {
   background: #fff;
   color: #000;
+}
+
+.titulo {
+  background-color: var(--cor-escura);
+  color: var(--cor-clara);
+}
+
+.titulo h1 { color: var(--cor-clara); }
+.titulo h2 { color: var(--cor-principal); }
+
+.aba {
+  border-color: var(--cor-principal);
+  background: var(--cor-principal);
+  color: var(--cor-escura);
+}
+
+.aba:hover,
+.aba.ativa {
+  background: var(--cor-destaque);
+  color: var(--cor-clara);
 }

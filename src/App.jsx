@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Header from "./componentes/Header";
-import Login from "./componentes/Login";
 import CardProd from "./componentes/CardProd";
 import Funcionario from "./componentes/Funcionario";
 import "./App.css";
 import Contador from "./componentes/contador";
 import Home from "../pages/home";
 import Carrinho from "../pages/carrinho";
+import Pedido from "../pages/pedido";
+import Login from "../pages/login";
 
 
 function App(){
@@ -65,8 +66,10 @@ function App(){
     setPagina("home");
   }
 
+  let conteudo;
+
   if (pagina === "carrinho") {
-    return (
+    conteudo = (
       <Carrinho
         itens={itensPedido}
         totalItens={quantidadeCarrinho}
@@ -77,18 +80,14 @@ function App(){
         aoFinalizar={finalizarPedido}
       />
     );
-  }
-
-  return(
-    <Home>
-    <div className="pagina">
-      <Header
-        titulo="Lanchonete Dogão"
-        subtitulo="A melhor de CWB"
-        quantidade={quantidadeCarrinho}
-        aoAbrirCarrinho={() => setPagina("carrinho")}
-      />
-      <Login  />
+  } else if (pagina === "pedido") {
+    conteudo = <Pedido />;
+  } else if (pagina === "login") {
+    conteudo = <Login />;
+  } else {
+    conteudo = (
+      <Home>
+        <div className="pagina">
 
       <section className="produtos">
         <h2>Cardápio</h2>
@@ -129,17 +128,28 @@ function App(){
         )}
       </section>
 
-      <Funcionario nome="Thiago o Chefe da Chapa" cargo="o chefe da chapa" />
+      <Funcionario nome="Thiago" cargo="Chefe" />
       <Funcionario nome="Maria" cargo="atendente" />
       <Funcionario nome="João" cargo="cozinheiro" />
       <Funcionario nome="Lúcia" cargo="caixa" />
 
       <Contador/>
     </div>
-    </Home>
+      </Home>
+    );
+  }
 
-  
-
-  )
+  return (
+    <>
+      <Header
+        titulo="Lanchonete Dogão"
+        subtitulo="A melhor de CWB"
+        quantidade={quantidadeCarrinho}
+        paginaAtual={pagina}
+        aoNavegar={setPagina}
+      />
+      {conteudo}
+    </>
+  );
 }
 export default App
