@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./componentes/Header";
 import CardProd from "./componentes/CardProd";
 import Funcionario from "./componentes/Funcionario";
@@ -9,17 +9,47 @@ import Carrinho from "../pages/carrinho";
 import Pedido from "../pages/pedido";
 import Login from "../pages/login";
 
+const CHAVE_CARRINHO = "lanchonete-carrinho";
+
+const produtosIniciais = [
+  { nome: "X-Bozze", preco: 19, quantidade: 0, imagem: "/imagens/xbozze.jpg" },
+  { nome: "X-Pimentel", preco: 17, quantidade: 0, imagem: "/imagens/xpimentel.jpg" },
+  { nome: "X-Fermino", preco: 15, quantidade: 0, imagem: "/imagens/xfermino.jpg" },
+  { nome: "Refrigerante", preco: 6, quantidade: 0, imagem: "/imagens/refrigerante.jpg" },
+  { nome: "Suco", preco: 5, quantidade: 0, imagem: "/imagens/suco.jpg" },
+  { nome: "Água", preco: 3.5, quantidade: 0, imagem: "/imagens/agua.jpg" },
+];
+
+function carregarProdutos() {
+  try {
+    const carrinhoSalvo = JSON.parse(localStorage.getItem(CHAVE_CARRINHO));
+
+    if (!Array.isArray(carrinhoSalvo)) {
+      return produtosIniciais;
+    }
+
+    return produtosIniciais.map((produto) => {
+      const produtoSalvo = carrinhoSalvo.find((item) => item.nome === produto.nome);
+      const quantidade = Number(produtoSalvo?.quantidade);
+
+      return {
+        ...produto,
+        quantidade: Number.isInteger(quantidade) && quantidade > 0 ? quantidade : 0,
+      };
+    });
+  } catch {
+    return produtosIniciais;
+  }
+}
+
 
 function App(){
   const [pagina, setPagina] = useState("home");
-  const [produtos, setProdutos] = useState([
-    { nome: "X-Bozze", preco: 19, quantidade: 0, imagem: "/imagens/xbozze.jpg" },
-    { nome: "X-Pimentel", preco: 17, quantidade: 0, imagem: "/imagens/xpimentel.jpg" },
-    { nome: "X-Fermino", preco: 15, quantidade: 0, imagem: "/imagens/xfermino.jpg" },
-    { nome: "Refrigerante", preco: 6, quantidade: 0, imagem: "/imagens/refrigerante.jpg" },
-    { nome: "Suco", preco: 5, quantidade: 0, imagem: "/imagens/suco.jpg" },
-    { nome: "Água", preco: 3.5, quantidade: 0, imagem: "/imagens/agua.jpg" },
-  ]);
+  const [produtos, setProdutos] = useState(carregarProdutos);
+
+  useEffect(() => {
+    localStorage.setItem(CHAVE_CARRINHO, JSON.stringify(produtos));
+  }, [produtos]);
 
   const itensPedido = produtos.filter((produto) => produto.quantidade > 0);
   const quantidadeCarrinho = produtos.reduce((total, produto) => {
