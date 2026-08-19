@@ -104,7 +104,10 @@ function App(){
   }
 
   function finalizarPedido() {
-    window.alert(`Pedido finalizado! Total: ${formatarPreco(totalPedido)}`);
+    const usuarioLogado = localStorage.getItem("usuario-logado");
+    const responsavel = usuarioLogado === "admin" ? "Administrador" : "Cliente";
+
+    window.alert(`Pedido finalizado por: ${responsavel}! Total: ${formatarPreco(totalPedido)}`);
     limparCarrinho();
     navigate("/home");
   }
