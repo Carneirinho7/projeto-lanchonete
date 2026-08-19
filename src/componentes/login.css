@@ -52,3 +52,9 @@
   background-color: var(--cor-escura);
   color: var(--cor-clara);
 }
+
+.erro-login {
+  margin: 0;
+  color: #b42318;
+  font-size: 14px;
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Header from "./componentes/Header";
 import CardProd from "./componentes/CardProd";
 import Funcionario from "./componentes/Funcionario";
@@ -8,6 +9,7 @@ import Home from "../pages/home";
 import Carrinho from "../pages/carrinho";
 import Pedido from "../pages/pedido";
 import Login from "../pages/login";
+import Cadastro from "../pages/cadastro";
 
 const CHAVE_CARRINHO = "lanchonete-carrinho";
 
@@ -44,8 +46,19 @@ function carregarProdutos() {
 
 
 function App(){
-  const [pagina, setPagina] = useState("home");
+  const navigate = useNavigate();
+  const location = useLocation();
   const [produtos, setProdutos] = useState(carregarProdutos);
+  const paginasPorRota = {
+    "/": "login",
+    "/home": "home",
+    "/carrinho": "carrinho",
+    "/pedido": "pedido",
+    "/login": "login",
+    "/cadastro": "cadastro",
+  };
+  const pagina = paginasPorRota[location.pathname] ?? "home";
+  const exibirHeader = pagina !== "login" && pagina !== "cadastro";
 
   useEffect(() => {
     localStorage.setItem(CHAVE_CARRINHO, JSON.stringify(produtos));
@@ -93,7 +106,19 @@ function App(){
   function finalizarPedido() {
     window.alert(`Pedido finalizado! Total: ${formatarPreco(totalPedido)}`);
     limparCarrinho();
-    setPagina("home");
+    navigate("/home");
+  }
+
+  function navegar(aba) {
+    const rotasPorPagina = {
+      home: "/home",
+      carrinho: "/carrinho",
+      pedido: "/pedido",
+      login: "/login",
+      cadastro: "/cadastro",
+    };
+
+    navigate(rotasPorPagina[aba]);
   }
 
   let conteudo;
@@ -105,7 +130,7 @@ function App(){
         totalItens={quantidadeCarrinho}
         totalPedido={totalPedido}
         formatarPreco={formatarPreco}
-        aoVoltar={() => setPagina("home")}
+        aoVoltar={() => navigate("/home")}
         aoLimpar={limparCarrinho}
         aoFinalizar={finalizarPedido}
       />
@@ -114,6 +139,8 @@ function App(){
     conteudo = <Pedido />;
   } else if (pagina === "login") {
     conteudo = <Login />;
+  } else if (pagina === "cadastro") {
+    conteudo = <Cadastro />;
   } else {
     conteudo = (
       <Home>
@@ -171,13 +198,15 @@ function App(){
 
   return (
     <>
-      <Header
-        titulo="Lanchonete Dogão"
-        subtitulo="A melhor de CWB"
-        quantidade={quantidadeCarrinho}
-        paginaAtual={pagina}
-        aoNavegar={setPagina}
-      />
+      {exibirHeader && (
+        <Header
+          titulo="Lanchonete Dogão"
+          subtitulo="A melhor de CWB"
+          quantidade={quantidadeCarrinho}
+          paginaAtual={pagina}
+          aoNavegar={navegar}
+        />
+      )}
       {conteudo}
     </>
   );

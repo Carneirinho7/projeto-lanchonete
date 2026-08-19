@@ -5,7 +5,7 @@ function Header ({ titulo, subtitulo, quantidade, paginaAtual, aoNavegar }) {
       { id: "home", nome: "Cardápio" },
       { id: "carrinho", nome: `Carrinho (${quantidade})` },
       { id: "pedido", nome: "Cozinha" },
-      { id: "login", nome: "Login" },
+      { id: "cadastro", nome: "Cadastro" },
     ];
 
     return (
